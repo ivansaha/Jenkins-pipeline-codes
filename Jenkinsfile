@@ -8,9 +8,12 @@ pipeline {
                 
             }
         }
-        stage('dockerversion') {
+        stage('dockerImageBuild') {
             steps {
-                sh 'docker -v'
+                sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 801296747126.dkr.ecr.us-east-1.amazonaws.com'
+                sh 'docker build -t jenkins-repo .'
+                sh 'docker tag jenkins-repo:latest 801296747126.dkr.ecr.us-east-1.amazonaws.com/jenkins-repo:latest'
+                sh 'docker push 801296747126.dkr.ecr.us-east-1.amazonaws.com/jenkins-repo:latest'
             }
         }
         stage('checkcontainer') {
