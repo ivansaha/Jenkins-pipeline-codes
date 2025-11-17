@@ -22,6 +22,14 @@ pipeline {
                 
             }
         }
+
+        stage('test') {
+            steps {
+                sh 'docker ps'
+                
+            }
+        }
+
     }
     
 }
