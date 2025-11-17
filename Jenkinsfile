@@ -4,14 +4,20 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-                sh 'pwd'
+                sh 'echo "cloning repo"'
             }
         }
-        stage('build'){
-            steps{
-                sh 'touch test-$BUILD_ID'
-                sh 'ls'
+        stage('test') {
+            steps {
+                sh 'echo "test"'
+            }
+        }
+        stage('File-create') {
+            steps {
+                sh 'echo "create a file"'
+                sh 'touch test-file-$BUILD_ID'
             }
         }
     }
+    
 }
