@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh 'sudo yum install -y trivy'
                 sh 'trivy --version'
+                sh 'echo "trivy installed"'
                 
             }
         }
