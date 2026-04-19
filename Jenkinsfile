@@ -5,6 +5,8 @@ pipeline {
         stage('clone') {
             steps {
                 sh 'echo "cloning repo"'
+                sh 'whoami'
+                sh 'uname -r'
             }
         }
         stage('test') {
