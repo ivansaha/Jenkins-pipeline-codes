@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('codescan') {
             steps {
-                sh 'echo "trivy installed"'
+                sh 'trivy fs . -o result.html'
                 
             }
         }
