@@ -28,8 +28,6 @@ pipeline {
         stage('checkcontainer') {
             steps {
                 sh 'docker ps -a'
-                sh 'docker ps -a'
-    
                 
                 
             }
